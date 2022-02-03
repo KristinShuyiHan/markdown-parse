@@ -11,10 +11,28 @@ public class MarkdownParseTest {
         assertEquals(2, 1 + 1);
     }
     @Test
-    public void testGetLinks() throws IOException {
+    public void testTestfile() throws IOException {
         Path fileName = Path.of("test-file.md");
 	    String contents = Files.readString(fileName);
         assertEquals(List.of("https://something.com","some-page.html"),MarkdownParse.getLinks(contents));
-        
     }
+    @Test
+    public void testImagemd() throws IOException {
+        Path fileName = Path.of("image.md");
+	    String contents = Files.readString(fileName);
+        assertEquals(List.of(),MarkdownParse.getLinks(contents));
+    }
+    @Test
+    public void testInvalidlink() throws IOException {
+        Path fileName = Path.of("invalidlink.md");
+	    String contents = Files.readString(fileName);
+        assertEquals(List.of(),MarkdownParse.getLinks(contents));
+    }
+    @Test
+    public void testWhatever() throws IOException {
+        Path fileName = Path.of("whatever.md");
+	    String contents = Files.readString(fileName);
+        assertEquals(List.of("abc.com"),MarkdownParse.getLinks(contents));
+    }
+
 }

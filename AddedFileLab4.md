@@ -1,3 +1,1 @@
-public class AddedFileLab4 {
-    
-}
+[whateverlink!](12345)
