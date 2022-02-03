@@ -8,7 +8,7 @@ import java.nio.file.Path;
 public class MarkdownParseTest {
     @Test
     public void addition() {
-        assertEquals(2, 1+2);
+        assertEquals(2, 3);
     }
     @Test
     public void testTestfile() throws IOException {
@@ -32,7 +32,7 @@ public class MarkdownParseTest {
     public void testWhatever() throws IOException {
         Path fileName = Path.of("whatever.md");
 	    String contents = Files.readString(fileName);
-        assertEquals(List.of("ab.com"),MarkdownParse.getLinks(contents));
+        assertEquals(List.of("abc.com"),MarkdownParse.getLinks(contents));
     }
 
 }
