@@ -8,7 +8,7 @@ import java.nio.file.Path;
 public class MarkdownParseTest {
     @Test
     public void addition() {
-        assertEquals(2, 3);
+        assertEquals(2, 4);
     }
     @Test
     public void testTestfile() throws IOException {
