@@ -32,7 +32,7 @@ public class MarkdownParseTest {
     public void testWhatever() throws IOException {
         Path fileName = Path.of("whatever.md");
 	    String contents = Files.readString(fileName);
-        assertEquals(List.of("abc.com"),MarkdownParse.getLinks(contents));
+        assertEquals(List.of("ab.com"),MarkdownParse.getLinks(contents));
     }
 
 }
