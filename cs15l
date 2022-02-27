@@ -15,15 +15,11 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
-            if(nextOpenBracket ==-1 || nextCloseBracket==-1){
-                break;
-            }
-            if (markdown.indexOf("!") != nextOpenBracket-1 && nextCloseBracket +1 == openParen && markdown.indexOf(".png",openParen) != closeParen-4){
+            if (markdown.indexOf("!") != nextOpenBracket-1 && markdown.indexOf(".png",openParen) != closeParen-4 && nextCloseBracket +1 == openParen){
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 } 
-            
+        
                 currentIndex = closeParen + 1;
-                System.out.println();
         }
         return toReturn;
 
@@ -33,6 +29,5 @@ public class MarkdownParse {
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = getLinks(contents);
         System.out.println(links);
-        
     }
 }
